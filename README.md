@@ -8,4 +8,4 @@ Se você deseja melhorar algum desafio, ou viu algo incorreto, por favor, não e
 
 Sou Vladimir Costa e deixarei abaixo minhas redes para que você sempre possa estar por dentro do que estou realizando.
 
-- [LinkedIn](https://www.linkedin.com/in/ildaneta)
+- [LinkedIn](https://www.linkedin.com/in/vladimir-costa)
