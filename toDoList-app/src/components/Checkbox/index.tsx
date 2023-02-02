@@ -1,20 +1,31 @@
+import { useCallback } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { IconDone } from '../../assets/icons/svg';
 import { colors } from '../../configs/colors';
 import { styles } from './style';
 
-export function Checkbox({ isChecked = false }) {
+interface CheckboxProps {
+  isChecked?: boolean;
+  onValueChange?: (value: boolean) => void;
+  value?: boolean;
+}
+
+export function Checkbox({ onValueChange, value = false }: CheckboxProps) {
+  const handleChange = useCallback(() => {
+    onValueChange && onValueChange(!value);
+  }, [onValueChange, value]);
   return (
     <TouchableOpacity
+      onPress={handleChange}
       style={[
         styles.container,
-        !isChecked && {
+        !value && {
           borderColor: colors.blueDark,
           backgroundColor: 'transparent',
         },
       ]}
     >
-      <View style={[styles.icon]}>{isChecked && <IconDone />}</View>
+      <View style={[styles.icon]}>{value && <IconDone />}</View>
     </TouchableOpacity>
   );
 }
