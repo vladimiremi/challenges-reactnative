@@ -5,19 +5,28 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.gray700,
+  },
+  header: {
+    width: '100%',
+    marginTop: 56,
+    backgroundColor: colors.gray700,
+    alignItems: 'center',
+    paddingTop: 24,
+    paddingBottom: 56,
+  },
+  containerMain: {
+    flex: 1,
+    backgroundColor: colors.background,
     alignItems: 'center',
     justifyContent: 'flex-start',
     padding: 24,
   },
 
-  header: {
-    marginTop: 56,
-  },
-
   form: {
     width: '100%',
     flexDirection: 'row',
-    marginTop: 40,
+    top: -27,
+    position: 'absolute',
     marginBottom: 32,
   },
 
@@ -50,5 +59,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingBottom: 20,
+
+    paddingTop: 32,
   },
 });

@@ -44,41 +44,44 @@ export function Home() {
       <View style={styles.header}>
         <Image source={Logo} />
       </View>
-      <View style={styles.form}>
-        <TextInput
-          style={styles.input}
-          placeholder="Adicione uma nova tarefa"
-          placeholderTextColor={colors.gray300}
-          onChangeText={setContent}
-          value={content}
-        />
-        <TouchableOpacity style={styles.button} onPress={handleAddTask}>
-          <IconPlus />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.containerLabels}>
-        <Label color={colors.blueDark} total={tasks.length}>
-          Criadas
-        </Label>
-        <Label
-          color={colors.purple}
-          total={tasks.filter(task => task.status === true).length}
-        >
-          Concluídas
-        </Label>
-      </View>
-      {true ? (
-        tasks.map(task => (
-          <ToDo
-            key={task.id}
-            task={task}
-            onRemoveTask={handleRemoveTask}
-            onToggleTaskStatus={handleToggleTaskStatus}
+
+      <View style={styles.containerMain}>
+        <View style={styles.form}>
+          <TextInput
+            style={styles.input}
+            placeholder="Adicione uma nova tarefa"
+            placeholderTextColor={colors.gray300}
+            onChangeText={setContent}
+            value={content}
           />
-        ))
-      ) : (
-        <Empty />
-      )}
+          <TouchableOpacity style={styles.button} onPress={handleAddTask}>
+            <IconPlus />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.containerLabels}>
+          <Label color={colors.blueDark} total={tasks.length}>
+            Criadas
+          </Label>
+          <Label
+            color={colors.purple}
+            total={tasks.filter(task => task.status === true).length}
+          >
+            Concluídas
+          </Label>
+        </View>
+        {tasks.length > 0 ? (
+          tasks.map(task => (
+            <ToDo
+              key={task.id}
+              task={task}
+              onRemoveTask={handleRemoveTask}
+              onToggleTaskStatus={handleToggleTaskStatus}
+            />
+          ))
+        ) : (
+          <Empty />
+        )}
+      </View>
     </View>
   );
 }
