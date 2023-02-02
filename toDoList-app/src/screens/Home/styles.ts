@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
     marginBottom: 32,
   },
 
+  //<form>
   input: {
     flex: 1,
     height: 54,
@@ -31,5 +32,23 @@ export const styles = StyleSheet.create({
     borderColor: colors.gray700,
     borderStyle: 'solid',
     borderRadius: 6,
+    color: colors.gray100,
+  },
+
+  button: {
+    padding: 18,
+    backgroundColor: colors.blueDark,
+    width: 52,
+    height: 52,
+    borderRadius: 6,
+    marginLeft: 8,
+  },
+  //</form>
+
+  containerLabels: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingBottom: 20,
   },
 });
